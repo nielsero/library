@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <script src='./scripts/main.js' defer></script>
+</head>
+<body>
+    <div class='container'>
+        <header>
+            <h1>Library</h1>
+        </header>
+        <main>
+            <div class= 'form-container'>
+                <form class='book-form'>
+                    <label>
+                        <input name='title' type='text' placeholder='Title' required>
+                    </label>
+                    <label>
+                        <input name='author' type='text' placeholder='Author' required>
+                    </label>
+                    <label>
+                        <input name='pages' type='number' placeholder='Pages' min='0' required>
+                    </label>
+                    <div class='read-radios'>
+                        Have you read: 
+                        <label> Yes
+                            <input type='radio' value='true' name='haveRead' checked>
+                        </label>
+                        <label> No
+                            <input type='radio' value='false' name='haveRead'>
+                        </label>
+                    </div>
+                    <button type='submit' class='submit-form-button'>Submit</button>
+                </form>
+            </div>
+
+            <div class='table-container'>
+                <table class='book-table'>
+                    <thead>
+                        <tr>
+                            <td>Title</td>
+                            <td>Author</td>
+                            <td>Pages</td>
+                            <td>Status</td>
+                            <td>Delete</td>
+                        </tr>
+                    </thead>
+
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

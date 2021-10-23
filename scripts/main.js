@@ -78,7 +78,11 @@ const BOOK_TABLE_DOM = {
     createDeleteButton: function(bookIndex) {
         const deleteButton = document.createElement('button');
         deleteButton.setAttribute('data-book-index', bookIndex);
-        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add('deleteButton');
+        const icon = document.createElement('i');
+        icon.classList.add('fas');
+        icon.classList.add('fa-trash');
+        deleteButton.appendChild(icon);
         deleteButton.addEventListener('click', this.handleDeleteButtonClick);
 
         return deleteButton;
@@ -87,7 +91,11 @@ const BOOK_TABLE_DOM = {
     createHaveReadButton: function(bookIndex) {
         const haveReadButton = document.createElement('button');
         haveReadButton.setAttribute('data-book-index', bookIndex);
-        haveReadButton.textContent = 'Green';
+        haveReadButton.classList.add('haveReadButton');
+        const icon = document.createElement('i');
+        icon.classList.add('fas');
+        icon.classList.add('fa-check');
+        haveReadButton.appendChild(icon);
         haveReadButton.addEventListener('click', this.handleHaveReadButtonClick);
 
         return haveReadButton;
@@ -96,7 +104,11 @@ const BOOK_TABLE_DOM = {
     createHaveNotReadButton: function(bookIndex) {
         const haveNotReadButton = document.createElement('button');
         haveNotReadButton.setAttribute('data-book-index', bookIndex);
-        haveNotReadButton.textContent = 'Red';
+        haveNotReadButton.classList.add('haveNotReadButton');
+        const icon = document.createElement('i');
+        icon.classList.add('fas');
+        icon.classList.add('fa-times');
+        haveNotReadButton.appendChild(icon);
         haveNotReadButton.addEventListener('click', this.handleHaveNotReadButtonClick);
 
         return haveNotReadButton;
@@ -133,21 +145,18 @@ const BOOK_FORM = {
     // Listener is a callback, cant use "this"
     handleSubmitButtonClick: function(event) {
         const formData = new FormData(BOOK_FORM.form);
-        console.log(BOOK_FORM.form);
         const title = formData.get('title');
         const author = formData.get('author');
         const pages = formData.get('pages');
-        const haveRead = formData.get('haveRead');
+        const haveRead = formData.get('haveRead') == 'true' ? true : false;
 
-        if(BOOK_FORM.isNameValid(title) && BOOK_FORM.isNameValid(author) && BOOK_FORM.isNumberValid(pages)) {
+        if(BOOK_FORM.isNameValid(title) && BOOK_FORM.isNameValid(author) && BOOK_FORM.isNumberValid(pages) && BOOK_FORM.isNameValid(pages) && (haveRead || !haveRead) ) {
             const book = new Book(title, author, pages, haveRead);
-
             LIBRARY.addBookToLibrary(book);
             BOOK_TABLE_DOM.displayAllBooks();
             BOOK_FORM.resetForm();
+            event.preventDefault(); // preventing focus on first input
         }
-
-        return false;
     },
 
     isNameValid: function(name) {

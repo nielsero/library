@@ -1,0 +1,158 @@
+body, h1, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== TYPOGRAPHY ====== */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.read-radios {
+    font-size: .85rem;
+}
+
+header {
+    font-size: 2rem;
+}
+
+header i {
+    font-size: 3.5rem;
+}
+
+/* ======= LAYOUT ======== */
+body {
+    background-color: #e6f3f8;
+}
+
+.container {
+    width: 100%;
+}
+
+header {
+    text-align: end;
+    padding: .5rem 3rem;
+    margin-bottom: 1rem;
+}
+
+header h1 {
+    display: inline;
+}
+
+header i {
+    margin-left: 1rem;
+    color: blue;
+}
+
+main {
+    display: flex;
+}
+
+.form-container {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.book-form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.form-title {
+    margin-bottom: 1rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: .5rem .5rem;
+    margin-bottom: 1rem;
+}
+
+.read-radios {
+    margin-bottom: 1rem;
+}
+
+.submit-form-button {
+    width: 60px;
+    padding: .5rem;
+    background-color: blue;
+    color: white;
+    border-style: none;
+    cursor: pointer;
+}
+
+.submit-form-button:hover, .submit-form-button:active {
+    background-color: rgba(0, 0, 255, .9);
+}
+
+.table-container {
+    width: 60%;
+    padding-right: 3rem;
+}
+
+.book-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.title-td, .author-td {
+    width: 25%;
+}
+
+.book-table tr td:first-child {
+   padding-left: .7rem;
+}
+
+.book-table thead tr {
+    background-color: blue;
+    color: white;
+}
+
+.book-table thead td {
+    text-align: start;
+}
+
+.book-table tr {
+    height: 3rem;
+}
+
+.book-table tbody tr:nth-of-type(odd) {
+    background-color: white;
+}
+
+.book-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.book-table tbody tr:last-of-type {
+    border-bottom: 2px solid blue;
+}
+
+.haveReadButton {
+    background-color: green;
+    border-style: none;
+    color: white;
+    width: 3rem;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.haveNotReadButton {
+    background-color: red;
+    border-style: none;
+    color: white;
+    width: 3rem;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.deleteButton {
+    background-color: gray;
+    border-style: none;
+    color: white;
+    width: 3rem;
+    padding: .5rem;
+    cursor: pointer;
+}

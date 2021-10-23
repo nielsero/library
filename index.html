@@ -5,35 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
+    
+    <link rel='stylesheet' href='./styles/main.css'>
+    <script src="https://kit.fontawesome.com/4939411770.js" crossorigin="anonymous"></script>
     <script src='./scripts/main.js' defer></script>
 </head>
 <body>
     <div class='container'>
         <header>
             <h1>Library</h1>
+            <i class='fas fa-book-open'></i>
         </header>
         <main>
             <div class= 'form-container'>
                 <form class='book-form'>
+                    <h2 class='form-title'>Add new book:</h2>
                     <label>
-                        <input name='title' type='text' placeholder='Title' required>
+                        <input class='input-field' name='title' type='text' placeholder='Title' required>
                     </label>
                     <label>
-                        <input name='author' type='text' placeholder='Author' required>
+                        <input class='input-field' name='author' type='text' placeholder='Author' required>
                     </label>
                     <label>
-                        <input name='pages' type='number' placeholder='Pages' min='0' required>
+                        <input class='input-field' name='pages' type='number' placeholder='Pages' min='0' required>
                     </label>
                     <div class='read-radios'>
-                        Have you read: 
+                        Have you read:
                         <label> Yes
-                            <input type='radio' value='true' name='haveRead' checked>
+                            <input type='radio' value='true' name='haveRead' required>
                         </label>
                         <label> No
-                            <input type='radio' value='false' name='haveRead'>
+                            <input type='radio' value='false' name='haveRead' required>
                         </label>
                     </div>
-                    <button type='submit' class='submit-form-button'>Submit</button>
+                    <button class='submit-form-button' type='submit'>
+                        <i class='fas fa-plus'></i>
+                    </button>
                 </form>
             </div>
 
@@ -41,11 +52,11 @@
                 <table class='book-table'>
                     <thead>
                         <tr>
-                            <td>Title</td>
-                            <td>Author</td>
-                            <td>Pages</td>
-                            <td>Status</td>
-                            <td>Delete</td>
+                            <td class='title-td'>Title</td>
+                            <td class='author-td'>Author</td>
+                            <td class='pages-td'>Pages</td>
+                            <td class='status-td'>Status</td>
+                            <td class='delete-td'>Delete</td>
                         </tr>
                     </thead>
 
